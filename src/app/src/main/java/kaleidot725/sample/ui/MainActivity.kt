@@ -3,6 +3,7 @@ package kaleidot725.sample.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import kaleidot725.sample.R
 import kaleidot725.sample.appModule
 import kaleidot725.sample.databinding.ActivityMainBinding
@@ -26,5 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         val binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
+
+        viewModel.user.observe(this, Observer {
+            binding.mainText.text = it.toString()
+        })
     }
 }

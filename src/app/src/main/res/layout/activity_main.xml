@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout>
+
     <data>
+
         <variable
             name="viewModel"
             type="kaleidot725.sample.ui.MainViewModel" />
@@ -14,14 +16,110 @@
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
 
-        <TextView
-            android:id="@+id/main_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+        <ImageView
+            android:id="@+id/user_image_view"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_image_view">
+
+            <TextView
+                android:id="@+id/user_name_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="User Name"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/user_name_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="User Name" />
+
+
+            <TextView
+                android:id="@+id/user_name_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/user_name_title"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Yusuke Katsuragawa" />
+
+            <TextView
+                android:id="@+id/id_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="ID"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/id_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_name_title"
+                tools:text="ID" />
+
+
+            <TextView
+                android:id="@+id/id_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/id_title"
+                app:layout_constraintTop_toBottomOf="@id/user_name_value"
+                tools:text="ID" />
+
+            <TextView
+                android:id="@+id/organization_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Organization"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/organization_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_title"
+                tools:text="Organization" />
+
+
+            <TextView
+                android:id="@+id/organization_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/organization_title"
+                app:layout_constraintTop_toBottomOf="@id/id_value"
+                tools:text="Company Name" />
+
+            <TextView
+                android:id="@+id/description_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="32dp"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/organization_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Description" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

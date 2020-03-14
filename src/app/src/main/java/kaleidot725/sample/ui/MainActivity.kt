@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import coil.api.load
 import kaleidot725.sample.R
 import kaleidot725.sample.appModule
 import kaleidot725.sample.databinding.ActivityMainBinding
@@ -29,7 +30,11 @@ class MainActivity : AppCompatActivity() {
         binding.viewModel = viewModel
 
         viewModel.user.observe(this, Observer {
-            binding.mainText.text = it.toString()
+            binding.userImageView.load(it.profile_image_url)
+            binding.userNameValue.text = it.name
+            binding.idValue.text = it.id
+            binding.organizationValue.text = it.organization
+            binding.descriptionValue.text = it.description
         })
     }
 }
